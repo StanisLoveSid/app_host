@@ -1,0 +1,41 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: oracle-host-app-deployment
+  labels:
+    app: oracle-host-app
+spec:
+  replicas: 5
+  strategy:
+    type: RollingUpdate
+    rollingUpdate:
+      maxSurge: 3
+      maxUnavailable: 0
+  selector:
+    matchLabels:
+      app: oracle-host-app
+  template:
+    metadata:
+      labels:
+        app: oracle-host-app
+    spec:
+      containers:
+        - name: oracle-host-app
+          image: stanislovesid/oracle-host-app:1
+          ports:
+            - containerPort: 8080
+          readinessProbe:
+            initialDelaySeconds: 10
+            periodSeconds: 15
+            timeoutSeconds: 10
+            successThreshold: 1
+            failureThreshold: 1
+            httpGet:
+              path: /app_host
+              port: 8080
+          # livenessProbe:
+          #   httpGet:
+          #     path: /status
+          #     port: 5000
+          #   initialDelaySeconds: 3
+          #   periodSeconds: 3
