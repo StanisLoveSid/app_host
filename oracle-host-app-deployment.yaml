@@ -33,9 +33,3 @@ spec:
             httpGet:
               path: /app_host
               port: 8080
-          # livenessProbe:
-          #   httpGet:
-          #     path: /status
-          #     port: 5000
-          #   initialDelaySeconds: 3
-          #   periodSeconds: 3
