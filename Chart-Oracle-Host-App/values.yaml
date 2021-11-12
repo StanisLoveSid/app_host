@@ -1,0 +1,6 @@
+# Default values for Helm Chart
+
+container:
+  image: stanislovesid/oracle-host-app:1
+
+replicaCount: 4

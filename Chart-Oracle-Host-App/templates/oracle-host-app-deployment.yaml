@@ -1,11 +1,11 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: oracle-host-app-deployment
+  name: {{ .Release.Name }}-deployment
   labels:
-    app: oracle-host-app
+    app: {{ .Release.Name }}
 spec:
-  replicas: 5
+  replicas: {{ .Values.replicaCount }}
   strategy:
     type: RollingUpdate
     rollingUpdate:
@@ -13,15 +13,15 @@ spec:
       maxUnavailable: 0
   selector:
     matchLabels:
-      app: oracle-host-app
+      app: {{ .Release.Name }}
   template:
     metadata:
       labels:
-        app: oracle-host-app
+        app: {{ .Release.Name }}
     spec:
       containers:
-        - name: oracle-host-app
-          image: stanislovesid/oracle-host-app:1
+        - name: {{ .Release.Name }}
+          image: {{ .Values.container.image }}
           ports:
             - containerPort: 8080
           readinessProbe:
