@@ -1,0 +1,18 @@
+apiVersion: v1
+entries:
+  Chart-Oracle-Host-App:
+  - apiVersion: v1
+    appVersion: 1.2.3
+    created: "2021-11-14T20:40:00.999799+02:00"
+    description: Helm chart for Kubernetes
+    digest: c58f6fb6e5aee84317a5814b8afc65ab347996600499fcef0d2b4eb69356a557
+    keywords:
+    - java
+    - http
+    - spring
+    name: Chart-Oracle-Host-App
+    type: application
+    urls:
+    - Chart-Oracle-Host-App-0.1.0.tgz
+    version: 0.1.0
+generated: "2021-11-14T20:40:00.998222+02:00"
