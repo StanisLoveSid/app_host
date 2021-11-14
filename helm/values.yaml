@@ -4,3 +4,6 @@ container:
   image: stanislovesid/oracle-host-app:1
 
 replicaCount: 4
+
+loadBalancer:
+  port: 80
