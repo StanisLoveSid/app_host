@@ -58,4 +58,4 @@ To get external ip run:
 kubectl get service
 ```
 
-Application address: your_ip/app_host
+Application address: your_external_ip/app_host
