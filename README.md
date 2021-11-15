@@ -21,6 +21,12 @@ v3.7.1+g1d11fcb
 
 ## Usage
 
+Start minikube if it's nor running yet
+
+```
+minikube start
+```
+
 ### Add repository
 
 ```
@@ -33,7 +39,7 @@ helm repo update
 ### Install packages
 
 ```
-helm install your-release-name/Chart-Oracle-Host-App
+helm install app your-release-name/Chart-Oracle-Host-App
 ```
 
 ### Run the minikube tunnel
@@ -44,4 +50,12 @@ minikube tunnel
 
 ### Access
 
-Application can be available by default port(80) at http://127.0.0.1/app_host
+Application can be available by default port(80) at route /app_host \
+
+To get external ip run:
+
+```
+kubectl get service
+```
+
+Application address: your_ip/app_host
