@@ -21,7 +21,7 @@ v3.7.1+g1d11fcb
 
 ## Usage
 
-Start minikube if it's nor running yet
+Start minikube if it's not running yet
 
 ```
 minikube start
