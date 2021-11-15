@@ -50,7 +50,7 @@ minikube tunnel
 
 ### Access
 
-Application can be available by default port(80) at route /app_host \
+Application can be available by default port(80) at route /app_host 
 
 To get external ip run:
 
